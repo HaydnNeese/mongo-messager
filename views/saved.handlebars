@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="/">Mongo Scraper</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/saved">Saved Articles</a>
+            </li>
+            <li class="nav-item">
+                <button type="button" id="article-scrape" class="btn btn-success btn-lg">Scrape New Articles</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="jumbotron jumbotron-fluid text-center" id="saved-jumbotron">
+    <div class="container">
+        <h1 class="display-4">Here are your saved articles</h1>
+    </div>
+</div>
+{{#each articles}}
+<div class="card text-center">
+    <img class="card-img-top" src="{{image}}" alt="Card image cap">
+    <div class="card-body">
+        <a href="https://www.gamespot.com{{link}}">
+            <h5 class="card-title">{{title}}</h5>
+        </a>
+        <p class="card-text">
+            {{summary}}
+        </p>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">{{time}}</small>
+    </div>
+    <button data-id="{{_id}}" type="button" class="btn btn-info unsave-article">Unsave article</button>
+    <button data-id="{{_id}}" type="button" class="btn btn-info comment-article" data-toggle="modal"
+        data-target=".comment-modal">Comment</button>
+</div>
+{{!-- modal --}}
+<div class="modal comment-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Leave a comment about this article</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{!-- insert comment input field --}}
+                <form class="text-center">
+                    <textarea id="comment-box" placeholder="Leave comment here..."></textarea>
+                    <button type="submit"  data-id="{{_id}}" class="btn btn-primary submit-comment">Submit</button>
+                    <button type="submit"  data-id="{{_id}}" class="btn btn-danger delete-comment">Delete</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+
+{{!-- scripts --}}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="index.js"></script>

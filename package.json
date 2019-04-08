@@ -1,0 +1,28 @@
+{
+  "name": "mongo-messenger",
+  "version": "1.0.0",
+  "description": "scraper of news articles with a comment section",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaydnNeese/mongo-messager.git"
+  },
+  "author": "Haydn Neese",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HaydnNeese/mongo-messager/issues"
+  },
+  "homepage": "https://github.com/HaydnNeese/mongo-messager#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "eslint": "^5.16.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mongoose": "^5.4.21",
+    "path": "^0.12.7"
+  }
+}

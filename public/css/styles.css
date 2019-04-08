@@ -1,0 +1,40 @@
+#homepage-jumbotron{
+    background-image: url("http://eskipaper.com/images/video-game-wallpapers-8.jpg");
+    background-size: cover;
+    padding-bottom: 37.5%;
+    margin-bottom: 0px;
+    color: white;
+    font-family: 'Alfa Slab One', cursive;
+   text-shadow: 2px 2px 4px #000000;
+}
+
+#article-jumbotron{
+    background-image: url("https://wallpaperplay.com/walls/full/6/3/c/101216.jpg");
+    background-size: cover;
+    padding-bottom: 12%;
+    margin-bottom: 0px;
+    color: white;
+    font-family: 'Alfa Slab One', cursive;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#saved-jumbotron {
+    background-image: url("https://i.pinimg.com/originals/a1/dd/a1/a1dda1718cd0b4ce29c20489e05267b2.jpg");
+    background-size: cover;
+    padding-bottom: 12%;
+    margin-bottom: 0px;
+    color: white;
+    font-family: 'Alfa Slab One', cursive;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.card {
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#comment-box {
+    width: 80%;
+}
